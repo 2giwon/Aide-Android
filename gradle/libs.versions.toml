@@ -17,6 +17,7 @@ espressoCore = "3.5.1"
 lifecycleRuntimeKtx = "2.6.1"
 activityCompose = "1.8.0"
 composeBom = "2026.02.01"
+konsist = "0.18.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -46,15 +47,15 @@ room-compiler = { group = "androidx.room", name = "room-compiler", version.ref =
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 junit-bom = { group = "org.junit", name = "junit-bom", version.ref = "junit5" }
-junit-jupiter-api = { group = "org.junit", name = "junit-jupiter-api" }
-junit-jupiter-engine = { group = "org.junit", name = "junit-jupiter-engine" }
-junit-jupiter-params = { group = "org.junit", name = "junit-jupiter-params" }
-junit-jupiter-launcher = { group = "org.junit", name = "junit-jupiter-launcher" }
+junit-jupiter-api = { group = "org.junit.jupiter", name = "junit-jupiter-api" }
+junit-jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine" }
+junit-jupiter-params = { group = "org.junit.jupiter", name = "junit-jupiter-params" }
+junit-jupiter-launcher = { group = "org.junit.platform", name = "junit-platform-launcher" }
 mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
 assertj-core = { group = "org.assertj", name = "assertj-core", version.ref = "assertj" }
-kotlinx-coroutines-test = { group = "org.jetbrains", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
-konsist = { group = "com.lemonappdev", name = "konsist" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
+konsist = { group = "com.lemonappdev", name = "konsist", version.ref = "konsist" }
 
 
 [plugins]
