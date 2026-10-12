@@ -1,12 +1,21 @@
 [versions]
 agp = "9.2.1"
+kotlin = "2.2.10"
+ksp = "2.3.12"
+hilt = "2.60.1"
+room = "2.8.5"
+coroutines = "1.11.0"
+junit5 = "5.14.4"
+androidJunit5 = "2.0.1"
+mockk = "1.14.11"
+turbine = "1.2.1"
+assertj = "3.27.7"
 coreKtx = "1.10.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
 lifecycleRuntimeKtx = "2.6.1"
 activityCompose = "1.8.0"
-kotlin = "2.2.10"
 composeBom = "2026.02.01"
 
 [libraries]
@@ -24,8 +33,36 @@ androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "u
 androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+android-gradle = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+kotlin-gradle = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+compose-compiler-gradle = { group = "org.jetbrains.kotlin", name = "compose-compiler-gradle-plugin", version.ref = "kotlin" }
+ksp-gradle = { group = "com.google.devtools.ksp", name = "symbol-processing-gradle-plugin", version.ref = "ksp" }
+hilt-gradle = { group = "com.google.dagger", name = "hilt-android-gradle-plugin", version.ref = "hilt" }
+room-gradle = { group = "androidx.room", name = "room-gradle-plugin", version.ref = "room" }
+android-junit5-gradle = { group = "de.mannodermaus.gradle.plugins", name = "android-junit5", version.ref = "androidJunit5" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+junit-bom = { group = "org.junit", name = "junit-bom", version.ref = "junit5" }
+junit-jupiter-api = { group = "org.junit", name = "junit-jupiter-api" }
+junit-jupiter-engine = { group = "org.junit", name = "junit-jupiter-engine" }
+junit-jupiter-params = { group = "org.junit", name = "junit-jupiter-params" }
+junit-jupiter-launcher = { group = "org.junit", name = "junit-jupiter-launcher" }
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
+assertj-core = { group = "org.assertj", name = "assertj-core", version.ref = "assertj" }
+kotlinx-coroutines-test = { group = "org.jetbrains", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
+konsist = { group = "com.lemonappdev", name = "konsist" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+room = { id = "androidx.room", version.ref = "room" }
+android-junit5 = { id = "de.mannodermaus.android-junit5", version.ref = "androidJunit5" }
 
