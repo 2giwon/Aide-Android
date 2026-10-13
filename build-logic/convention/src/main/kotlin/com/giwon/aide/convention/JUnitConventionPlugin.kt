@@ -21,7 +21,7 @@ class JUnitConventionPlugin: Plugin<Project> {
                 add("testRuntimeOnly", libs.findLibrary("junit-jupiter-engine").get())
                 add("testRuntimeOnly", libs.findLibrary("junit-jupiter-launcher").get())
                 add("testImplementation", libs.findLibrary("mockk").get())
-                add("testImplementation", libs.findLibrary("turbine"))
+                add("testImplementation", libs.findLibrary("turbine").get())
                 add("testImplementation", libs.findLibrary("assertj-core").get())
                 add("testImplementation", libs.findLibrary("kotlinx-coroutines-test").get())
             }
