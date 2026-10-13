@@ -67,3 +67,9 @@ hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 room = { id = "androidx.room", version.ref = "room" }
 android-junit5 = { id = "de.mannodermaus.android-junit5", version.ref = "androidJunit5" }
 
+aide-android-library = { id = "aide.android.library" }
+aide-android-compose = { id = "aide.android.compose" }
+aide-android-hilt = { id = "aide.android.hilt" }
+aide-android-junit = { id = "aide.android.junit" }
+
+
