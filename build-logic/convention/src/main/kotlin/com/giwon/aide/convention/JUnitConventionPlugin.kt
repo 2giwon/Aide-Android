@@ -14,12 +14,9 @@ class JUnitConventionPlugin : Plugin<Project> {
                 testOptions.unitTests.isReturnDefaultValues = true
             }
 
+            configureJunit()
             dependencies {
-                add("testImplementation", platform(libs.findLibrary("junit-bom").get()))
-                add("testImplementation", libs.findLibrary("junit-jupiter-api").get())
                 add("testImplementation", libs.findLibrary("junit-jupiter-params").get())
-                add("testRuntimeOnly", libs.findLibrary("junit-jupiter-engine").get())
-                add("testRuntimeOnly", libs.findLibrary("junit-jupiter-launcher").get())
                 add("testImplementation", libs.findLibrary("mockk").get())
                 add("testImplementation", libs.findLibrary("turbine").get())
                 add("testImplementation", libs.findLibrary("assertj-core").get())

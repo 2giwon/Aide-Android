@@ -66,5 +66,6 @@ aide-android-library = { id = "aide.android.library" }
 aide-android-compose = { id = "aide.android.compose" }
 aide-android-hilt = { id = "aide.android.hilt" }
 aide-android-junit = { id = "aide.android.junit" }
+aide-jvm-library = { id = "aide.jvm.library" }
 
 

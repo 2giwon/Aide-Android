@@ -42,5 +42,9 @@ gradlePlugin {
             id = "aide.android.feature"
             implementationClass = "com.giwon.aide.convention.AndroidFeatureConventionPlugin"
         }
+        register("jvmLibrary") {
+            id = "aide.jvm.library"
+            implementationClass = "com.giwon.aide.convention.JvmLibraryConventionPlugin"
+        }
     }
 }

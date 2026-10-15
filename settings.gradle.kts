@@ -25,3 +25,13 @@ dependencyResolutionManagement {
 
 rootProject.name = "Aide-Android"
 include(":app")
+include(":core:model")
+include(":core:data")
+include(":core:database")
+include(":core:calendar")
+include(":core:notification")
+include(":core:designsystem")
+include(":feature:home")
+include(":feature:calendar")
+include(":feature:settings")
+include(":coding-convention")

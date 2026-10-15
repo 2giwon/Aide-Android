@@ -18,6 +18,11 @@ android {
 }
 
 dependencies {
+    implementation(project(":feature:home"))
+    implementation(project(":feature:calendar"))
+    implementation(project(":feature:settings"))
+    implementation(project(":core:notification"))
+
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.ui)
