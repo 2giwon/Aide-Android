@@ -1,6 +1,7 @@
 package com.giwon.aide.konsist
 
 import com.lemonappdev.konsist.api.Konsist
+import com.lemonappdev.konsist.api.container.KoScope
 import com.lemonappdev.konsist.api.verify.assertFalse
 import com.lemonappdev.konsist.api.verify.assertTrue
 import org.junit.jupiter.api.Test
@@ -19,8 +20,9 @@ class ScreenConventionTest {
 
     @Test
     fun `ViewModel 이 있는 패키지에는 UiState가 있다`() {
-        val scope = Konsist.scopeFromProject()
-        val uiStates = (scope.classes() + scope.interfaces()).map { it.fullyQualifiedName }.toSet()
+        val scope: KoScope = Konsist.scopeFromProject()
+        val uiStates: Set<String?> =
+            (scope.classes() + scope.interfaces()).map { it.fullyQualifiedName }.toSet()
 
         scope.classes()
             .filter { it.name.endsWith("ViewModel") }
