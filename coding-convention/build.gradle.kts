@@ -1,3 +1,5 @@
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+
 plugins {
     alias(libs.plugins.aide.jvm.library)
 }
@@ -13,4 +15,7 @@ tasks.test {
             exclude("**/build/**")
         }
     )
+    testLogging {
+        exceptionFormat = TestExceptionFormat.FULL
+    }
 }
