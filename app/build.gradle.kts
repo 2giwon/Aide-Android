@@ -8,6 +8,10 @@ plugins {
 android {
     namespace = "com.giwon.aide"
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     buildTypes {
         release {
             optimization {
@@ -22,6 +26,7 @@ dependencies {
     implementation(project(":feature:calendar"))
     implementation(project(":feature:settings"))
     implementation(project(":core:notification"))
+    implementation(project(":core:designsystem"))
 
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3)
@@ -29,4 +34,9 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.navigation3.runtime)
+    implementation(libs.androidx.navigation3.ui)
+    implementation(libs.androidx.lifecycle.viewmodel.navigation3)
+    implementation(libs.timber)
+    debugImplementation(libs.leakcanary.android)
 }
