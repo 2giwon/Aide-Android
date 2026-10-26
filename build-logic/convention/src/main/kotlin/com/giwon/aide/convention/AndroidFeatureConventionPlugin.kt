@@ -11,11 +11,14 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
             pluginManager.apply("aide.android.compose")
             pluginManager.apply("aide.android.hilt")
             pluginManager.apply("aide.android.junit")
+            pluginManager.apply("org.jetbrains.kotlin.plugin.serialization")
 
             dependencies {
                 add("implementation", project(":core:model"))
                 add("implementation", project(":core:data"))
                 add("implementation", project(":core:designsystem"))
+                add("implementation", libs.findLibrary("androidx-navigation3-runtime").get())
+                add("implementation", libs.findLibrary("kotlinx-serialization-core").get())
             }
         }
     }

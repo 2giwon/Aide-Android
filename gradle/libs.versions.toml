@@ -10,15 +10,19 @@ androidJunit5 = "2.0.1"
 mockk = "1.14.11"
 turbine = "1.2.1"
 assertj = "3.27.7"
-coreKtx = "1.10.1"
-lifecycleRuntimeKtx = "2.6.1"
-activityCompose = "1.8.0"
+coreKtx = "1.18.0"
+lifecycle = "2.10.0"
+activityCompose = "1.12.4"
+navigation3 = "1.1.7"
+kotlinxSerialization = "1.10.0"
+timber = "5.0.1"
+leakcanary = "2.14"
 composeBom = "2026.02.01"
 konsist = "0.18.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
@@ -48,6 +52,12 @@ turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine
 assertj-core = { group = "org.assertj", name = "assertj-core", version.ref = "assertj" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
 konsist = { group = "com.lemonappdev", name = "konsist", version.ref = "konsist" }
+androidx-navigation3-runtime = { group = "androidx.navigation3", name = "navigation3-runtime", version.ref = "navigation3" }
+androidx-navigation3-ui = { group = "androidx.navigation3", name = "navigation3-ui", version.ref = "navigation3" }
+androidx-lifecycle-viewmodel-navigation3 = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-navigation3", version.ref = "lifecycle" }
+kotlinx-serialization-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-core", version.ref = "kotlinxSerialization" }
+timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
+leakcanary-android = { group = "com.squareup.leakcanary", name = "leakcanary-android", version.ref = "leakcanary" }
 
 
 [plugins]
@@ -58,6 +68,7 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 room = { id = "androidx.room", version.ref = "room" }
 android-junit5 = { id = "de.mannodermaus.android-junit5", version.ref = "androidJunit5" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 
 aide-android-application = { id = "aide.android.application" }
 aide-android-room = { id = "aide.android.room" }

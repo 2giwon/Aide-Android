@@ -1,4 +1,4 @@
-package com.giwon.aide.ui.theme
+package com.giwon.aide.core.designsystem.theme
 
 import androidx.compose.ui.graphics.Color
 
