@@ -56,7 +56,6 @@ internal class ContentResolverCalendarDataSource @Inject constructor(
         ) { it.toEvent() }
     }
 
-    // 종일 일정의 BEGIN 은 UTC 자정이라 범위를 하루씩 넓혀 찾는다
     override suspend fun findInstance(eventId: Long, start: Instant): Event? =
         query(
             uri = instancesUri(start - ONE_DAY, start + ONE_DAY),
@@ -91,7 +90,6 @@ internal class ContentResolverCalendarDataSource @Inject constructor(
             .appendPath(to.toEpochMilli().toString())
             .build()
 
-    // 칸 순서는 아래 PROJECTION 배열 순서와 같다
     private fun Cursor.toCalendarSource() = CalendarSource(
         id = getLong(0),
         displayName = getString(1).orEmpty(),
