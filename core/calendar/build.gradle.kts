@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.aide.android.library)
+    alias(libs.plugins.aide.android.hilt)
 }
 
 android {
@@ -7,5 +8,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:model"))
+    api(project(":core:model"))
+    api(libs.kotlinx.coroutines.core)
+    implementation(libs.timber)
 }
