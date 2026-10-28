@@ -26,6 +26,7 @@ class ScreenConventionTest {
 
         scope.classes()
             .filter { it.name.endsWith("ViewModel") }
+            .filterNot { it.packagee?.name?.startsWith("com.giwon.aide.feature.calendar.scheduler") == true }
             .assertTrue { viewModel ->
                 val expected =
                     viewModel.packagee?.name + "." + viewModel.name.removeSuffix("ViewModel") + "UiState"

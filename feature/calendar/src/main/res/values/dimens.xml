@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="calendar_event_height">12dp</dimen>
+    <dimen name="calendar_event_half_mode_height">4dp</dimen>
+    <dimen name="calendar_event_day_margin">24dp</dimen>
+</resources>

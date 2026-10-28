@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="add_schedule">+추가하기</string>
+    <string name="empty_schedule">일정이 없습니다</string>
+    <string name="today">오늘</string>
+    <string name="weekday_sunday">일</string>
+    <string name="weekday_monday">월</string>
+    <string name="weekday_tuesday">화</string>
+    <string name="weekday_wednesday">수</string>
+    <string name="weekday_thursday">목</string>
+    <string name="weekday_friday">금</string>
+    <string name="weekday_saturday">토</string>
+</resources>

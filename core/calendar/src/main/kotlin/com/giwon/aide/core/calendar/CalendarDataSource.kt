@@ -11,3 +11,4 @@ interface CalendarDataSource {
     suspend fun queryInstances(from: Instant, to: Instant, calendarIds: Set<Long>): List<Event>
     suspend fun findInstance(eventId: Long, start: Instant): Event?
 }
+
