@@ -11,7 +11,6 @@ import javax.inject.Inject
 internal class VisibleCalendarStore @Inject constructor(
     private val dataStore: DataStore<Preferences>,
 ) {
-    /** 한 번도 고르지 않았으면 null */
     val calendarIds: Flow<Set<Long>?> = dataStore.data.map { preferences ->
         preferences[VISIBLE_CALENDAR_IDS]?.map(String::toLong)?.toSet()
     }

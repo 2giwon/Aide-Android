@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="cv_dayViewResource" format="reference" />
+
+    <attr name="cv_scrollPaged" format="boolean" />
+
+    <attr name="cv_daySize" format="enum">
+        <enum name="square" value="0" />
+        <enum name="rectangle" value="1" />
+        <enum name="seventhWidth" value="2" />
+        <enum name="freeForm" value="3" />
+    </attr>
+
+    <declare-styleable name="CalendarView">
+        <attr name="cv_dayViewResource" />
+
+        <attr name="cv_monthHeaderResource" format="reference" />
+
+        <attr name="cv_monthFooterResource" format="reference" />
+
+        <attr name="cv_outDateStyle" format="enum">
+            <enum name="endOfRow" value="0" />
+            <enum name="endOfGrid" value="1" />
+        </attr>
+
+        <attr name="cv_monthViewClass" format="string" />
+
+        <attr name="cv_orientation" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+
+        <attr name="cv_scrollPaged" />
+        <attr name="cv_daySize" />
+    </declare-styleable>
+
+</resources>
