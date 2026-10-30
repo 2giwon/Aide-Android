@@ -1,14 +1,9 @@
 package com.giwon.aide.navigation
 
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Icon
-import androidx.compose.material3.NavigationBar
-import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
@@ -18,35 +13,28 @@ import com.giwon.aide.feature.calendar.navigation.calendarEntry
 import com.giwon.aide.feature.home.navigation.HomeKey
 import com.giwon.aide.feature.home.navigation.homeEntry
 import com.giwon.aide.feature.settings.navigation.settingsEntry
-import kotlin.collections.listOf
 
 @Composable
-fun AideApp() {
-    val backStack = rememberNavBackStack(HomeKey)
-    val currentTab =
+fun AideApp(startTab: TopLevelDestination = TopLevelDestination.HOME) {
+    val backStack = rememberNavBackStack(
+        *TopLevelDestination.entries
+            .filter { destination -> destination == TopLevelDestination.HOME || destination == startTab }
+            .map { destination -> destination.key }
+            .toTypedArray()
+    )
+    val currentTab: TopLevelDestination =
         TopLevelDestination.entries.last { destination -> destination.key in backStack }
 
     Scaffold(
         bottomBar = {
-            NavigationBar {
-                TopLevelDestination.entries.forEach { destination ->
-                    NavigationBarItem(
-                        selected = destination == currentTab,
-                        onClick = {
-                            backStack.clear()
-                            backStack.add(HomeKey)
-                            if (destination.key != HomeKey) backStack.add(destination.key)
-                        },
-                        icon = {
-                            Icon(
-                                painterResource(destination.icon),
-                                contentDescription = null
-                            )
-                        },
-                        label = { Text(destination.label) },
-                    )
+            AideBottomBar(
+                currentTab = currentTab,
+                onTabClick = { destination ->
+                    backStack.clear()
+                    backStack.add(HomeKey)
+                    if (destination.key != HomeKey) backStack.add(destination.key)
                 }
-            }
+            )
         }
     ) { innerPadding ->
         NavDisplay(
@@ -61,7 +49,7 @@ fun AideApp() {
                 homeEntry()
                 calendarEntry()
                 settingsEntry()
-            }
+            },
         )
     }
 }
