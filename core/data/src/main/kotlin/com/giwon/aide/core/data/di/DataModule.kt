@@ -6,13 +6,16 @@ import androidx.datastore.preferences.core.PreferenceDataStoreFactory
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStoreFile
 import com.giwon.aide.core.data.DefaultEventRepository
+import com.giwon.aide.core.data.DefaultTaskRepository
 import com.giwon.aide.core.data.EventRepository
+import com.giwon.aide.core.data.TaskRepository
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import java.time.Clock
 import javax.inject.Singleton
 
 @Module
@@ -21,10 +24,16 @@ internal abstract class DataModule {
     @Binds
     abstract fun bindsEventRepository(repository: DefaultEventRepository): EventRepository
 
+    @Binds
+    abstract fun bindsTaskRepository(repository: DefaultTaskRepository): TaskRepository
+
     companion object {
         @Provides
         @Singleton
         fun providesPreferencesDataStore(@ApplicationContext context: Context): DataStore<Preferences> =
             PreferenceDataStoreFactory.create { context.preferencesDataStoreFile("settings") }
+
+        @Provides
+        fun providesClock(): Clock = Clock.systemDefaultZone()
     }
 }
